@@ -107,9 +107,11 @@ The primary TCP server is created in the `app.js` module. It should export a fun
 returns the configured tcp server. It does not start the server (call `.listen`). This will be done in `server.js` in root 
 of project.
 
-The function needs to:
+The server needs to:
 * Create a ChatRoom instance to manage chat users
 * Call `net.createServer` to create the server and listen for events
+* Subscribe to client socket events 
+* (Remember to call `client.setEncoding('utf8');` to work with just text)
 * Properly orchestrate connected clients.
 
 ### `server.js`
