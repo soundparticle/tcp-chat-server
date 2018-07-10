@@ -4,10 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "npm run test:mocha",
-    "test:mocha": "mocha",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test:run": "mocha",
+    "test": "npm run test:run",
+    "test:dev": "npm run test:run -- -w",
     "start": "node server.js"
-    
   },
   "repository": {
     "type": "git",
