@@ -33,7 +33,7 @@ describe('Clients', () => {
         assert.deepEqual(allClients, [c1, c3]);
     })
 
-    it
+    it()
 
 
 });
