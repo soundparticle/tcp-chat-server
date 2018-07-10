@@ -31,12 +31,20 @@ describe('Clients', () => {
         clients.remove(c2);
         const allClients = clients.getAllClients();
         assert.deepEqual(allClients, [c1, c3]);
-    })
+    });
 
     it('gives back list of clients (minus sender)', () => {
         const broadcast = clients.getBroadcastClients(c1);
         assert.deepEqual(broadcast, [c2, c3]);
     });
+
+    // it('sends a DM (message) to another user)', () => {
+    //     const DM = {}; 
+    //     const userDM = clients.directMessage(message);
+    //     if(message !== )
+
+
+    // });
 
 
 });
