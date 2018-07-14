@@ -37,7 +37,10 @@ describe('Clients', () => {
         const broadcast = clients.getBroadcastClients(c1);
         assert.deepEqual(broadcast, [c2, c3]);
     });
-
+    it('gets object of assigned username', () => {
+        const result = clients.getClient(c2.username);
+        assert.deepEqual(result, c2);
+    });
     // it('sends a DM (message) to another user)', () => {
     //     const DM = {}; 
     //     const userDM = clients.directMessage(message);
