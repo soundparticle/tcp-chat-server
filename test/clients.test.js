@@ -41,6 +41,12 @@ describe('Clients', () => {
         const result = clients.getClient(c2.username);
         assert.deepEqual(result, c2);
     });
+
+    it('renames a user', () => {
+        clients.rename(c1.username, 'Chris');
+        const result = clients.getClient(c1.username);
+        assert.deepEqual(result, c1);
+    });
     // it('sends a DM (message) to another user)', () => {
     //     const DM = {}; 
     //     const userDM = clients.directMessage(message);
