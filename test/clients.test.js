@@ -47,13 +47,9 @@ describe('Clients', () => {
         const result = clients.getClient(c1.username);
         assert.deepEqual(result, c1);
     });
-    // it('sends a DM (message) to another user)', () => {
-    //     const DM = {}; 
-    //     const userDM = clients.directMessage(message);
-    //     if(message !== )
 
-
-    // });
-
-
+    // it('Won\'t use an existing name'), () => {
+    //     clients.rename(c1.username, 'User#2');
+    //     assert.deepEqual(c1.username, 'User#1');
+    // };
 });
