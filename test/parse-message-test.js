@@ -1,21 +1,24 @@
 const assert = require('assert');
-const parseMessage = require('../lib/parse-message');
+const processMessage = require('../lib/processMessage');
 
-describe('parse message for DM', () => {
+describe('message for chatroom DM', () => {
+    const invalid = 'hello';
+    const valid = '@all hello';
+    const expected = {
+        command: 'all',
+        arg: undefined,
+        text: 'hello'
+    };
 
-    it('returns null if command does not start with @ symbol', () => {
-        const message = 'change username'; 
-        assert.equal(parseMessage(message), null);
+    it('message starts with @', () => {
+        assert.ok(processMessage(valid), '@all');
     });
 
-    // it.skip('handles rename command @chris', () => {
-    //     const command = '@chris NewUserName';
-    //     const parsed = parseMessage(command);
-    //     console.log('*** parsed ****', parsed);
-    //     const expected = {
-    //         command: '@chris',
-    //         arg: 'NewUserName'
-    //     };
-    //     assert.deepEqual(parsed, expected);
-    // });
+    it('message does not start with @', () => {
+        assert.equal(processMessage(invalid), null);
+    });
+
+    it('returns an object', () => {
+        assert.deepEqual(processMessage(valid), expected);
+    });
 });

@@ -37,6 +37,7 @@ describe('Clients', () => {
         const broadcast = clients.getBroadcastClients(c1);
         assert.deepEqual(broadcast, [c2, c3]);
     });
+    
     it('gets object of assigned username', () => {
         const result = clients.getClient(c2.username);
         assert.deepEqual(result, c2);
@@ -47,9 +48,4 @@ describe('Clients', () => {
         const result = clients.getClient(c1.username);
         assert.deepEqual(result, c1);
     });
-
-    // it('Won\'t use an existing name'), () => {
-    //     clients.rename(c1.username, 'User#2');
-    //     assert.deepEqual(c1.username, 'User#1');
-    // };
 });
